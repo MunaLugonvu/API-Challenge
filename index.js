@@ -23,7 +23,7 @@ if(newsSource === '1'){
    console.log("Invalid Input\n");
    process.exit()//exit application
    }
-   function articlesarray(el) {
+   function articlesArray(el) {   //articlesarray is an array of objects
     let article_names = [];
     for (let i=0; i<el.length; i+=1) {
     article_names.push('\x1b[33m',i+1 +"."+ el[i].title);
@@ -42,8 +42,8 @@ if(newsSource === '1'){
         console.log(error);
       }
       else{  
-        if(result.totalResults != 0){
-    console.log(articlesarray(result.articles));
+        if(result.totalResults != 0){ // if results exists search for keyword in results
+    console.log(articlesArray(result.articles)); // return article based on keyword
     }
     else
     {
