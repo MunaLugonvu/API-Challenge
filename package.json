@@ -1,0 +1,24 @@
+{
+  "name": "api-challenge",
+  "version": "1.0.0",
+  "description": "commandline consummes newsapi",
+  "main": "index.js",
+  "dependencies": {
+    "newsapi": "^2.4.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MunaLugonvu/API-Challenge.git"
+  },
+  "author": "Lugonvu Mayimuna Kizza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MunaLugonvu/API-Challenge/issues"
+  },
+  "homepage": "https://github.com/MunaLugonvu/API-Challenge#readme"
+}
