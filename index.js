@@ -18,7 +18,7 @@ if(newsSource === '1'){
    chosenSource = 'bbc-sport';
    }
    else{
-   console.log('\x1b[31m',"You have to choose a letter\n");
+   console.log('\x1b[31m',"You have to choose a number\n");
    process.exit()//exit application
    }
    function articlesarray(prods) {
