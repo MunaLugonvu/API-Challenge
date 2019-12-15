@@ -24,13 +24,13 @@ if(newsSource === '1'){
    process.exit()//exit application
    }
    function articlesArray(el) {   //articlesarray is an array of objects
-    let article_names = [];
+    let articleNames = [];
     for (let i=0; i<el.length; i+=1) {
-    article_names.push('\x1b[33m',i+1 +"."+ el[i].title);
-    article_names.push('\x1b[34m',el[i].description);
-    article_names.push('\x1b[32m',el[i].url);
+    articleNames.push('\x1b[33m',i+1 +"."+ el[i].title);
+    articleNames.push('\x1b[34m',el[i].description);
+    articleNames.push('\x1b[32m',el[i].url);
     }
-    return article_names.join('\r\n');
+    return articleNames.join('\r\n');
     }
    newsapi.v2.everything({
     sources: [chosenSource],
