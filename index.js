@@ -2,36 +2,63 @@ const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('04dcdb75a7d34496ba4fa437ceb8283b')
 
 var readlineSync = require('readline-sync')
-//et chosenSource, newsSource;
+
  var newsSource = readlineSync.question('Which news Source would you prefer?\n 1 For BBC news\n 2 For Fox News\n 3 For Aljazzera News\n 4. For BBC Sport News\n');
 let chosenSource;
 var keyword = readlineSync.question('Any keyword to search for? ');
+var bbc ='1'; var fox ='2'; var alJazeera = '3'; var bbcSport = '4';
 
-if(newsSource === '1'){
+switch ( newsSource){
+  case bbc:
+    chosenSource = 'bbc-news';
+    break;
+  case fox:
+    chosenSource = 'fox-news' ;
+    break;
+  case alJazeera:
+    chosenSource = 'al-jazeera-english';
+    break;
+  case bbcSport:
+    chosenSource = 'bbc-sport';
+    break;
+  default:
+       console.log('Invalid Input\n')
+       
+       process.exit();
+}
+    
+
+//one could use an if statement
+/*if(newsSource ===bbc){
     chosenSource = 'bbc-news';
    }
-   else if(newsSource === '2'){
+   else if(newsSource === fox){
    chosenSource = 'fox-news';
    }
-   else if(newsSource === '3'){
+   else if(newsSource === alJazeera){
    chosenSource = 'al-jazeera-english';
    }
-   else if(newsSource === '4'){
+   else if(newsSource === bbcSport){
    chosenSource = 'bbc-sport';
    }
    else{
    console.log("Invalid Input\n");
+
    process.exit()//exit application
-   }
+   }*/
+   
    function articlesArray(el) {   //articlesarray is an array of objects
     let articleNames = [];
+    const neonGreen = '\x1b[32m';
+    const yellow =  '\x1b[33m';
+    const magenta = '\x1b[35m';
     for (let i=0; i<el.length; i+=1) {
-    articleNames.push('\x1b[33m',i+1 +"."+ el[i].title);
-    articleNames.push('\x1b[34m',el[i].description);
-    articleNames.push('\x1b[32m',el[i].url);
+    articleNames.push(neonGreen,i+1 +"."+ el[i].title);
+    articleNames.push(yellow,el[i].description);
+    articleNames.push(magenta ,el[i].url);
     }
     return articleNames.join('\r\n');
-    }
+  }
    newsapi.v2.everything({
     sources: [chosenSource],
     q: [keyword],
