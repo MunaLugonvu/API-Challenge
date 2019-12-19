@@ -1,5 +1,5 @@
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('04dcdb75a7d34496ba4fa437ceb8283b')
+const newsapi = new NewsAPI('')//Your API Key
 
 var readlineSync = require('readline-sync')
 
